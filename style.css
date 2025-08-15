@@ -1,0 +1,152 @@
+/* Base Styles */
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2ecc71;
+    --dark-color: #2c3e50;
+    --light-color: #ecf0f1;
+    --spacing: 1rem;
+    --border-radius: 5px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--dark-color);
+    background-color: var(--light-color);
+}
+
+/* Header Styles */
+.header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: var(--spacing);
+    text-align: center;
+}
+
+/* Navigation - Flexbox Example */
+.navbar {
+    background-color: var(--dark-color);
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    padding: var(--spacing);
+}
+
+.nav-list a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem;
+}
+
+/* Main Content - Grid Example */
+.main-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing);
+    padding: var(--spacing);
+}
+
+.sidebar {
+    background-color: var(--secondary-color);
+    padding: var(--spacing);
+    border-radius: var(--border-radius);
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar a {
+    color: var(--dark-color);
+    text-decoration: none;
+    display: block;
+    padding: 0.5rem 0;
+}
+
+/* Content Cards - Flexbox Example */
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing);
+}
+
+.card {
+    background: white;
+    padding: var(--spacing);
+    border-radius: var(--border-radius);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* Footer Styles */
+.footer {
+    background-color: var(--dark-color);
+    color: white;
+    padding: var(--spacing);
+    text-align: center;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.social-links a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Media Queries for Responsive Design */
+@media (min-width: 600px) {
+    /* Tablet Styles */
+    .main-content {
+        grid-template-columns: 200px 1fr;
+    }
+    
+    .nav-list {
+        justify-content: flex-start;
+        gap: 1rem;
+    }
+    
+    .content {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .card {
+        flex: 1 1 calc(50% - var(--spacing));
+    }
+}
+
+@media (min-width: 900px) {
+    /* Desktop Styles */
+    .content {
+        flex-wrap: nowrap;
+    }
+    
+    .card {
+        flex: 1;
+    }
+    
+    .nav-list {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 400px) {
+    /* Mobile adjustments */
+    .nav-list {
+        flex-direction: column;
+        align-items: center;
+    }
+}
